@@ -1,0 +1,1 @@
+const generator = require('./index.js')()
