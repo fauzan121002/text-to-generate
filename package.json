@@ -1,6 +1,6 @@
 {
   "name": "text-to-generate",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Text Generator by Muhammad Fauzan",
   "main": "index.js",
   "scripts": {
