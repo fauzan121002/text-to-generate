@@ -1,25 +1,22 @@
-this is made by https://github.com/fauzan121002
+# Text To Generate
 
-HOW TO INSTALL WITH NPM
+Text To Generate is Simple Text Generator Package.
 
+## Setup
+
+### **Installation**
+```bash
 npm i text-to-generate
+```
 
+### **Example Usage**
 
-------------------------------
-
-install node on your computer
-
-npm install
-
-INIT THE TEXT GENERATOR on {name}.js :
-
+**Write below code in your javascript, e.g `index.js`**
+```js
 const generator = require('text-to-generate')()
+```
 
-
-
-run {name}.js :
-
-node {name}.js
-
-
-{name} means your filename.
+**Then run your javascript file**
+```
+node index.js
+```
