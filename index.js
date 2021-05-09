@@ -12,13 +12,13 @@ module.exports = function () {
     console.log(
       colors.success,
       `
-		\rFitur Text Generator yang tersedia :
-		\r1. hilih text
-		\r2. spongebob case text
-		\r3. uppercase text
-		\r4. lowercase text
-		\r5. keluar (Ctrl+C)
-	`
+        \rFitur Text Generator yang tersedia :
+        \r1. hilih text
+        \r2. spongebob case text
+        \r3. uppercase text
+        \r4. lowercase text
+        \rCtrl+C untuk keluar
+      `
     );
 
     let generator = () => {
@@ -27,72 +27,19 @@ module.exports = function () {
 
         if (pilihan == 1) {
           console.log(hilih(rules.text));
-          inquirer
-            .prompt([
-              {
-                name: "continue",
-                type: "input",
-                message: "continue? Y/N",
-              },
-            ])
-            .then((rules) => {
-              if (rules.continue == "Y") {
-                CLIinterface();
-              } else {
-                process.exit;
-              }
-            });
+          retry();
         } else if (pilihan == 2) {
           console.log(spongebob(rules.text));
-          inquirer
-            .prompt([
-              {
-                name: "continue",
-                type: "input",
-                message: "continue? Y/N",
-              },
-            ])
-            .then((rules) => {
-              if (rules.continue == "Y") {
-                CLIinterface();
-              } else {
-                process.exit;
-              }
-            });
+          retry();
         } else if (pilihan == 3) {
           console.log(rules.text.toUpperCase());
-          inquirer
-            .prompt([
-              {
-                name: "continue",
-                type: "input",
-                message: "continue? Y/N",
-              },
-            ])
-            .then((rules) => {
-              if (rules.continue == "Y") {
-                CLIinterface();
-              } else {
-                process.exit;
-              }
-            });
+          retry();
         } else if (pilihan == 4) {
           console.log(rules.text.toLowerCase());
-          inquirer
-            .prompt([
-              {
-                name: "continue",
-                type: "input",
-                message: "continue? Y/N",
-              },
-            ])
-            .then((rules) => {
-              if (rules.continue == "Y") {
-                CLIinterface();
-              } else {
-                process.exit;
-              }
-            });
+          retry();
+        } else if (pilihan == 4) {
+          console.log(rules.text.toLowerCase());
+          retry();
         } else {
           process.stdout.write("\033c");
           console.log(chalk.red("Mohon input pilihan dengan benar!"));
@@ -102,6 +49,24 @@ module.exports = function () {
     };
 
     generator();
+  };
+
+  let retry = () => {
+    inquirer
+      .prompt([
+        {
+          name: "continue",
+          type: "input",
+          message: "continue? Y/N",
+        },
+      ])
+      .then((rules) => {
+        if (rules.continue == "Y") {
+          CLIinterface();
+        } else {
+          process.exit;
+        }
+      });
   };
 
   CLIinterface();
