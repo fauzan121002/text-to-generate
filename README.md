@@ -1,5 +1,7 @@
 # Text To Generate
 
+![Simple Text Generator Nodejs](./Screenshot.PNG)
+
 Text To Generate is Simple Text Generator Package.
 
 ```bash
