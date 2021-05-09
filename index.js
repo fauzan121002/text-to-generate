@@ -1,14 +1,20 @@
 const figlet = require("figlet");
 const inquirer = require("inquirer");
 const cli = require("./cli.js");
-const { hilih, spongebob, colors } = require("./lib/wrapper");
+const {
+  hilih,
+  spongebob,
+  textToAscii,
+  asciiToText,
+  colors,
+} = require("./lib/wrapper");
 const { version } = require("./package.json");
 
 module.exports = function () {
-  let CLIinterface = () => {
-    console.log(colors.error, figlet.textSync("TEXT GENERATOR", {}));
-    console.log(colors.primary, `text-to-generate version ${version}`);
+  console.log(colors.error, figlet.textSync("TEXT GENERATOR", {}));
+  console.log(colors.primary, `text-to-generate version ${version}`);
 
+  let CLIinterface = () => {
     console.log(
       colors.success,
       `
@@ -17,6 +23,8 @@ module.exports = function () {
         \r2. spongebob case text
         \r3. uppercase text
         \r4. lowercase text
+        \r5. text to ascii
+        \r6. ascii to text
         \rCtrl+C untuk keluar
       `
     );
@@ -40,9 +48,15 @@ module.exports = function () {
         } else if (pilihan == 4) {
           console.log(rules.text.toLowerCase());
           retry();
+        } else if (pilihan == 5) {
+          console.log(textToAscii(rules.text));
+          retry();
+        } else if (pilihan == 6) {
+          console.log(asciiToText(rules.text));
+          retry();
         } else {
           process.stdout.write("\033c");
-          console.log(chalk.red("Mohon input pilihan dengan benar!"));
+          console.log(colors.error, "Mohon input pilihan dengan benar!");
           CLIinterface();
         }
       });
