@@ -1,26 +1,26 @@
 module.exports = {
   question: [
     {
-      name: "pilihan",
+      name: "selection",
       type: "input",
-      message: "Pilih fitur :",
+      message: "Select feature :",
       validate: (value) => {
         if (value.length) {
           return true;
         } else {
-          return "Tolong isi pilihan ya! jangan dikosongin!";
+          return "Please input the selection! don't leave it empty!";
         }
       },
     },
     {
       name: "text",
       type: "input",
-      message: "Masukkan teks :",
+      message: "Input the text :",
       validate: (value) => {
         if (value.length) {
           return true;
         } else {
-          return "Tolong isi pilihan ya! jangan dikosongin!";
+          return "Please input the selection! don't leave it empty!";
         }
       },
     },

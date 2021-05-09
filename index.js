@@ -20,45 +20,45 @@ module.exports = (function () {
     console.log(
       colors.success,
       `
-        \rFitur Text Generator yang tersedia :
+        \rAvailable features :
         \r1. hilih text
         \r2. spongebob case text
         \r3. uppercase text
         \r4. lowercase text
         \r5. text to ascii
         \r6. ascii to text
-        \rCtrl+C untuk keluar
+        \rCtrl+C to exit
       `
     );
 
     let generator = () => {
       inquirer.prompt(cli.question).then((rules) => {
-        let pilihan = rules.pilihan;
+        let selection = rules.selection;
 
-        if (pilihan == 1) {
+        if (selection == 1) {
           console.log(hilih(rules.text));
           retry();
-        } else if (pilihan == 2) {
+        } else if (selection == 2) {
           console.log(spongebob(rules.text));
           retry();
-        } else if (pilihan == 3) {
+        } else if (selection == 3) {
           console.log(rules.text.toUpperCase());
           retry();
-        } else if (pilihan == 4) {
+        } else if (selection == 4) {
           console.log(rules.text.toLowerCase());
           retry();
-        } else if (pilihan == 4) {
+        } else if (selection == 4) {
           console.log(rules.text.toLowerCase());
           retry();
-        } else if (pilihan == 5) {
+        } else if (selection == 5) {
           console.log(textToAscii(rules.text));
           retry();
-        } else if (pilihan == 6) {
+        } else if (selection == 6) {
           console.log(asciiToText(rules.text));
           retry();
         } else {
           process.stdout.write("\033c");
-          console.log(colors.error, "Mohon input pilihan dengan benar!");
+          console.log(colors.error, "Please input the selection correctly!");
           CLIinterface();
         }
       });
