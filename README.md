@@ -2,24 +2,19 @@
 
 Text To Generate is Simple Text Generator Package.
 
-## Setup
-
-### **Installation**
-
 ```bash
-npm i text-to-generate
+npx text-to-generate
 ```
 
-### **Example Usage**
+## Features
 
-**Write below code in your javascript, e.g `index.js`**
+- Hilih
+- Spongebob Case
+- Uppercase
+- Lowercase
+- Text to Ascii
+- Ascii to Text
 
-```js
-const generator = require("text-to-generate")();
-```
+## License
 
-**Then run your javascript file**
-
-```
-node index.js
-```
+Text To Generate is licensed under MIT License.

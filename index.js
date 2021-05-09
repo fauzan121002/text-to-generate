@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const figlet = require("figlet");
 const inquirer = require("inquirer");
 const cli = require("./cli.js");
@@ -10,7 +12,7 @@ const {
 } = require("./lib/wrapper");
 const { version } = require("./package.json");
 
-module.exports = function () {
+module.exports = (function () {
   console.log(colors.error, figlet.textSync("TEXT GENERATOR", {}));
   console.log(colors.primary, `text-to-generate version ${version}`);
 
@@ -84,4 +86,4 @@ module.exports = function () {
   };
 
   CLIinterface();
-};
+})();
