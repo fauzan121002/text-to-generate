@@ -47,9 +47,6 @@ module.exports = (function () {
         } else if (selection == 4) {
           console.log(rules.text.toLowerCase());
           retry();
-        } else if (selection == 4) {
-          console.log(rules.text.toLowerCase());
-          retry();
         } else if (selection == 5) {
           console.log(textToAscii(rules.text));
           retry();
